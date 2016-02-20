@@ -1,5 +1,5 @@
 {
-    "name": "webshell",
+    "name": "webshell-server",
     "version": "0.2.0",
     "dependencies": {
         "body-parser": "^1.13.3",
@@ -40,6 +40,6 @@
     "homepage": "https://github.com/maestrano/webshell",
     "preferGlobal": "true",
     "bin": {
-        "webshell": "./bin/webshell.js"
+        "webshell": "./bin/webshell-server.js"
     }
 }

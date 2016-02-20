@@ -25,9 +25,9 @@ Run webshell as a service daemon
 Install webshell globally with -g option:
 
 ```bash
-    $ sudo npm install webshell -g
-    $ sudo cp /usr/local/lib/node_modules/webshell/bin/webshell.conf /etc/init
-    $ sudo start webshell
+    $ sudo npm install webshell-server --prefix /opt -g
+    $ sudo cp /usr/local/lib/node_modules/webshell/bin/webshell-server.conf /etc/init
+    $ sudo start webshell-server
 ```
 
 This will start webshell on port 3000. If you want to change the port or redirect stdout/stderr you should change the last line in `webshell.conf` file, something like this:

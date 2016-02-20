@@ -13,7 +13,7 @@ User=root
 Group=root
 
 WorkingDirectory=/opt/webshell
-ExecStart=webshell -p 9443
+ExecStart=webshell-server -p 9443
 
 [Install]
 WantedBy=multi-user.target
