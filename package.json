@@ -40,7 +40,7 @@
   "homepage": "https://github.com/maestrano/webshell",
   "preferGlobal": "true",
   "bin": {
-    "webshell": "./bin/webshell-server.js"
+    "webshell-server": "./bin/webshell-server.js"
   },
   "scripts": {
     "postinstall": "scripts/install.js"
