@@ -4,6 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Webshell - The WebTTY Terminal Emulator</title>
+    <style>
+      form { text-align: center; margin-top: 200px; }
+      .row { margin-top: 10px; }
+      .row input {
+        line-height: 36px;
+        width: 300px;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 5px;
+        border: solid 1px #ccc;
+      }
+      .row input:focus { outline: none; border: 1px solid #aaa; }
+      form button {
+        border-radius: 6px;
+        border: 1px solid #977bf0;
+        background-color: transparent;
+        font-weight: 500;
+        color: #977bf0;
+        font-size: 20px;
+        padding: 10px;
+        width: 300px;
+        cursor: pointer;
+      }
+      form button:hover {
+        color: #fff;
+        background-color: #977bf0;
+      }
+    </style>
 </head>
 
 <body>
@@ -12,16 +40,16 @@
         <% if ( typeof resource_id !== 'undefined' && resource_id ) { %>
             <input type="hidden" name="resource_id" value="<%= resource_id %>">
         <% } %>
-        <div>
-            <label>Username:</label>
-            <input type="text" name="username"/>
+        <div class="row">
+            <!-- <label>Username:</label> -->
+            <input type="text" name="username" placeholder="Username"/>
         </div>
-        <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
+        <div class="row">
+            <!-- <label>Password:</label> -->
+            <input type="password" name="password" placeholder="Password"/>
         </div>
-        <div>
-            <input type="submit" value="Log In"/>
+        <div class="row">
+            <button type="submit">Login</button>
         </div>
     </form>
 
