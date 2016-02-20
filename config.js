@@ -6,6 +6,11 @@ config.session = {
   secret: '2asd7f4d6s15s74d',
 };
 
+// Paths
+config.paths = {
+  logout: '/logout' // triggered on frontend side - adjust if behind a proxy
+}
+
 // User authentication function
 config.authFn = function(req, username, password, cb) {
   if (username == "foo" && password == "bar") {

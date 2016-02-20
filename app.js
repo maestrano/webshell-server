@@ -193,7 +193,7 @@ io.on('connection', function(socket){
     });
     term.on('exit', function(code) {
         console.log((new Date()) + " PID=" + term.pid + " ENDED");
-        socket.emit('exit','/logout');
+        socket.emit('exit',config.paths.logout);
     });
     socket.on('resize', function(data) {
         term.resize(data.col, data.row);
