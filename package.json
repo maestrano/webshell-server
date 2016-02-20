@@ -1,6 +1,6 @@
 {
   "name": "webshell-server",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "dependencies": {
     "body-parser": "^1.13.3",
     "connect-ensure-login": "^0.1.1",
