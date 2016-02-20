@@ -1,45 +1,45 @@
 {
-    "name": "webshell-server",
-    "version": "0.2.0",
-    "dependencies": {
-        "body-parser": "^1.13.3",
-        "connect-ensure-login": "^0.1.1",
-        "cookie-parser": "^1.3.5",
-        "morgan": "^1.6.1",
-        "express": "^4.13.3",
-        "express-session": "^1.11.3",
-        "ejs": "^2.3.3",
-        "socket.io": "^1.3.7",
-        "pty.js": "^0.3.0",
-        "optimist": "^0.6",
-        "passport": "*",
-        "passport-local": "~1.0",
-        "passport.socketio": "*",
-        "session-file-store": "*",
-        "csurf": "*"
-    },
-    "devDependencies": {
-        "load-grunt-tasks": "^3.0",
-        "grunt": "^0.4",
-        "grunt-shell": "^1.1",
-        "grunt-mkdir": "^0.1",
-        "grunt-git": "^0.3",
-        "grunt-contrib-clean": "^0.6"
-    },
-    "description": "Web Shell with configurable access management",
-    "main": "app.js",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/maestrano/webshell.git"
-    },
-    "author": "Maestrano <developers@maestrano.com> (https://github.com/maestrano)",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/maestrano/webshell/issues"
-    },
-    "homepage": "https://github.com/maestrano/webshell",
-    "preferGlobal": "true",
-    "bin": {
-        "webshell": "./bin/webshell-server.js"
-    }
+  "name": "webshell-server",
+  "version": "0.3.0",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.3.5",
+    "morgan": "^1.6.1",
+    "express": "^4.13.3",
+    "express-session": "^1.11.3",
+    "ejs": "^2.3.3",
+    "socket.io": "^1.3.7",
+    "pty.js": "^0.3.0",
+    "optimist": "^0.6",
+    "passport": "*",
+    "passport-local": "~1.0",
+    "passport.socketio": "*",
+    "session-file-store": "*",
+    "csurf": "*"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "^3.0",
+    "grunt": "^0.4",
+    "grunt-shell": "^1.1",
+    "grunt-mkdir": "^0.1",
+    "grunt-git": "^0.3",
+    "grunt-contrib-clean": "^0.6"
+  },
+  "description": "Web Shell with configurable access management",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/maestrano/webshell.git"
+  },
+  "author": "Maestrano <developers@maestrano.com> (https://github.com/maestrano)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maestrano/webshell/issues"
+  },
+  "homepage": "https://github.com/maestrano/webshell",
+  "preferGlobal": "true",
+  "bin": {
+    "webshell": "./bin/webshell-server.js"
+  }
 }
