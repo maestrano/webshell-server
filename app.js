@@ -9,7 +9,11 @@ var LocalStrategy = require('passport-local').Strategy;
 var passportSocketIo = require("passport.socketio");
 
 // Load app configuration
-var config = require('./config');
+var configFile = './config';
+if (fs.existsSync(configFile)) {
+  configFile = '/etc/webshell/config.js';
+}
+var config = require(configFile);
 
 //===============================================
 // Server Configuration
