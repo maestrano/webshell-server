@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs');
 var dir = '/etc/webshell';
 var configFile = '/etc/webshell/config.js';
