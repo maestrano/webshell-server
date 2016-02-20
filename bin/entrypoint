@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "Logged into resource $1"
+
+/bin/bash

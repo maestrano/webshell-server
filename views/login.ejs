@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Webshell - The WebTTY Terminal Emulator</title>
+</head>
+
+<body>
+    <form action="/login" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username"/>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+        </div>
+        <div>
+            <input type="submit" value="Log In"/>
+        </div>
+    </form>
+
+</body>
+
+</html>
