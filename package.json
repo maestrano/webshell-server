@@ -41,5 +41,8 @@
   "preferGlobal": "true",
   "bin": {
     "webshell": "./bin/webshell-server.js"
+  },
+  "scripts": {
+    "postinstall" : "scripts/install.js"
   }
 }
