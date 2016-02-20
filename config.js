@@ -8,9 +8,9 @@ config.session = {
 
 // User authentication function
 config.authFn = function(req, username, password, cb) {
-  console.log(req.get('host'));
   if (username == "foo" && password == "bar") {
-    return cb(null, { id: username, res_id: 'xyz' });
+    var resource_id = req.body.resource_id || 'default';
+    return cb(null, { id: username, resource_id: resource_id });
   } else {
     return cb(null, false, { message: 'Invalid credentials' });
   }
@@ -21,7 +21,7 @@ config.authFn = function(req, username, password, cb) {
 config.shellEntrypoint = function(req) {
   return {
     script: __dirname + '/bin/entrypoint',
-    args: [req.user.res_id],
+    args: [req.user.resource_id],
   };
 }
 

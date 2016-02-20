@@ -95,11 +95,23 @@ app.use('/webshell', express.static(path.join(__dirname, 'public','webshell')));
 app.get('/login',
   csrfProtection,
   function(req, res){
-    console.log("Rendering login");
     res.render('login',{ csrfToken: req.csrfToken() });
   });
 
+app.get('/:resource_id/login',
+  csrfProtection,
+  function(req, res){
+    res.render('login',{ csrfToken: req.csrfToken(), resource_id: req.params.resource_id });
+  });
+
 app.post('/login',
+  csrfProtection,
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+
+app.post('/:resource_id/login',
   csrfProtection,
   passport.authenticate('local', { failureRedirect: '/login' }),
   function(req, res) {
@@ -112,10 +124,22 @@ app.get('/logout',
     res.redirect('/login');
   });
 
+app.get('/:resource_id/logout',
+  function(req, res){
+    req.logout();
+    res.redirect('/login');
+  });
+
 app.get('/',
   require('connect-ensure-login').ensureLoggedIn(),
   function(req, res){
     res.render('index', { user: req.user });
+  });
+
+app.get('/:resource_id',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+    res.render('index', { user: req.user, resource_id: req.params.resource_id });
   });
 
 //===============================================
