@@ -1,6 +1,6 @@
 {
   "name": "webshell-server",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "dependencies": {
     "body-parser": "^1.13.3",
     "connect-ensure-login": "^0.1.1",
@@ -43,6 +43,6 @@
     "webshell": "./bin/webshell-server.js"
   },
   "scripts": {
-    "postinstall" : "scripts/install.js"
+    "postinstall": "scripts/install.js"
   }
 }
