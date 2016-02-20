@@ -26,7 +26,7 @@ Install webshell globally with -g option:
 
 ```bash
     $ sudo npm install webshell-server -g
-    $ sudo cp /usr/local/lib/node_modules/webshell/bin/webshell-server.conf /etc/init
+    $ sudo cp /usr/local/lib/node_modules/webshell-server/bin/webshell-server.conf /etc/init
     $ sudo start webshell-server
 ```
 
