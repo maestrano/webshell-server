@@ -95,56 +95,33 @@ app.use(passport.session());
 //===============================================
 // Express Routes
 //===============================================
+config.proxy_pass_prefix = config.proxy_pass_prefix || ''
+
 app.use('/webshell', express.static(path.join(__dirname, 'public','webshell')));
 
 app.get('/login',
   csrfProtection,
   function(req, res){
-    res.render('login',{ csrfToken: req.csrfToken() });
-  });
-
-app.get('/:resource_id/login',
-  csrfProtection,
-  function(req, res){
-    res.render('login',{ csrfToken: req.csrfToken(), resource_id: req.params.resource_id });
+    res.render('login',{ csrfToken: req.csrfToken(), proxy_pass_prefix: config.proxy_pass_prefix, resource_id: req.get('X-Webshell-ResourceId') });
   });
 
 app.post('/login',
   csrfProtection,
-  passport.authenticate('local', { failureRedirect: '/login' }),
+  passport.authenticate('local', { failureRedirect: config.proxy_pass_prefix + '/login' }),
   function(req, res) {
-    res.redirect('/');
-  });
-
-app.post('/:resource_id/login',
-  csrfProtection,
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
+    res.redirect(config.proxy_pass_prefix + '/');
   });
 
 app.get('/logout',
   function(req, res){
     req.logout();
-    res.redirect('/login');
-  });
-
-app.get('/:resource_id/logout',
-  function(req, res){
-    req.logout();
-    res.redirect('/login');
+    res.redirect(config.proxy_pass_prefix + '/login');
   });
 
 app.get('/',
-  require('connect-ensure-login').ensureLoggedIn(),
+  require('connect-ensure-login').ensureLoggedIn(config.proxy_pass_prefix + '/login'),
   function(req, res){
-    res.render('index', { user: req.user });
-  });
-
-app.get('/:resource_id',
-  require('connect-ensure-login').ensureLoggedIn(),
-  function(req, res){
-    res.render('index', { user: req.user, resource_id: req.params.resource_id });
+    res.render('index', { user: req.user, proxy_pass_prefix: config.proxy_pass_prefix, resource_id: req.get('X-Webshell-ResourceId') });
   });
 
 //===============================================
@@ -193,7 +170,7 @@ io.on('connection', function(socket){
     });
     term.on('exit', function(code) {
         console.log((new Date()) + " PID=" + term.pid + " ENDED");
-        socket.emit('exit',config.paths.logout);
+        socket.emit('exit', config.proxy_pass_prefix + '/logout');
     });
     socket.on('resize', function(data) {
         term.resize(data.col, data.row);

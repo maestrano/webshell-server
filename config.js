@@ -6,10 +6,8 @@ config.session = {
   secret: '2asd7f4d6s15s74d',
 };
 
-// Paths
-config.paths = {
-  logout: '/logout' // triggered on frontend side - adjust if behind a proxy
-}
+// Proxy Configuration
+// config.proxy_pass_prefix = '/someprefix'
 
 // User authentication function
 config.authFn = function(req, username, password, cb) {

@@ -1,5 +1,7 @@
 var term;
-var socket = io(location.origin, {path: '/webshell/socket.io'})
+var config = webshellConfig || {};
+config.proxy_pass_prefix = config.proxy_pass_prefix || '';
+var socket = io(location.origin, {path: config.proxy_pass_prefix + '/webshell/socket.io'})
 var buf = '';
 
 function Webshell(argv) {

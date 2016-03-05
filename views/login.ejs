@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <form action="/login" method="post">
+    <form action="<%= proxy_pass_prefix %>/login" method="post">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <% if ( typeof resource_id !== 'undefined' && resource_id ) { %>
             <input type="hidden" name="resource_id" value="<%= resource_id %>">
