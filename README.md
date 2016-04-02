@@ -7,7 +7,7 @@ Not production ready.
 
 Install
 -------
-```shell
+```bash
 git clone https://github.com/maestrano/webshell-server
 cd webshell-server
 npm install
@@ -16,7 +16,7 @@ npm install
 Run:
 -----------
 
-```shell
+```bash
 node app.js -p 3000
 ```
 
@@ -25,7 +25,7 @@ Configuration - Example accessing docker containers
 Edit the config.js file in the project directory to specify how authentication should be handled and what shell command should be run at startup.
 
 E.g.
-```javascripts
+```js
 var config = {};
 
 // Session Configuration
@@ -60,7 +60,7 @@ module.exports = config;
 ```
 
 **Run your application:**  
-```shell
+```bash
 node app.js -p 3000
 ```
 
@@ -75,9 +75,9 @@ Run webshell as a service daemon
 Install webshell-server globally with -g option:
 
 ```bash
-    $ sudo npm install webshell-server -g
-    $ sudo cp /usr/local/lib/node_modules/webshell-server/bin/webshell-server.conf /etc/init
-    $ sudo start webshell-server
+ sudo npm install webshell-server -g
+sudo cp /usr/local/lib/node_modules/webshell-server/bin/webshell-server.conf /etc/init
+sudo start webshell-server
 ```
 
 This will start webshell-server on port 9443.
