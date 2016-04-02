@@ -102,7 +102,8 @@ app.use('/webshell', express.static(path.join(__dirname, 'public','webshell')));
 app.get('/login',
   csrfProtection,
   function(req, res){
-    res.render('login',{ csrfToken: req.csrfToken(), proxy_pass_prefix: config.proxy_pass_prefix, resource_id: req.get('X-Webshell-ResourceId') });
+    resource_id = req.get('X-Webshell-ResourceId') || req.query.rid;
+    res.render('login',{ csrfToken: req.csrfToken(), proxy_pass_prefix: config.proxy_pass_prefix, resource_id: resource_id });
   });
 
 app.post('/login',
@@ -121,7 +122,7 @@ app.get('/logout',
 app.get('/',
   require('connect-ensure-login').ensureLoggedIn(config.proxy_pass_prefix + '/login'),
   function(req, res){
-    res.render('index', { user: req.user, proxy_pass_prefix: config.proxy_pass_prefix, resource_id: req.get('X-Webshell-ResourceId') });
+    res.render('index', { user: req.user, proxy_pass_prefix: config.proxy_pass_prefix });
   });
 
 //===============================================
