@@ -75,7 +75,7 @@ Run webshell as a service daemon
 Install webshell-server globally with -g option:
 
 ```bash
- sudo npm install webshell-server -g
+sudo npm install webshell-server -g
 sudo cp /usr/local/lib/node_modules/webshell-server/bin/webshell-server.conf /etc/init
 sudo start webshell-server
 ```
