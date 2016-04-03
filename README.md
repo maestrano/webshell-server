@@ -1,4 +1,4 @@
-Webshell
+Webshell Server
 -----------------
 
 Terminal over HTTP and HTTPS. Outrageously inspired from the excellent [Wetty](https://github.com/krishnasrinivas/wetty) - adapted to support web based authentication.
