@@ -30,14 +30,14 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/maestrano/webshell.git"
+    "url": "git://github.com/maestrano/webshell-server.git"
   },
   "author": "Maestrano <developers@maestrano.com> (https://github.com/maestrano)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maestrano/webshell/issues"
+    "url": "https://github.com/maestrano/webshell-server/issues"
   },
-  "homepage": "https://github.com/maestrano/webshell",
+  "homepage": "https://github.com/maestrano/webshell-server",
   "preferGlobal": "true",
   "bin": {
     "webshell-server": "./bin/webshell-server.js"
